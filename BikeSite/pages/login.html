@@ -1,0 +1,274 @@
+<style>
+
+.container .jumbotron .row .col-sm-11 .container {
+	max-width: 360px;
+}
+
+.container .jumbotron {
+	margin-bottom:20px;
+}
+
+@media (max-width:320px) {
+	.container .jumbotron {
+		width:250px;
+	}
+}
+
+@media (max-width: 767px) {
+.form-group input {
+	width:90%;
+}
+.form-horizontal .form-control, .form-horizontal .control-label{
+	margin-left: 30px;
+}
+.form-group {
+			height:60px;
+}
+.errorImg {
+	position: relative;
+	top:-34px;
+	left:8px;
+}
+
+
+}
+
+
+
+@media (max-width: 992px) {
+
+.col-sm-1 {
+	width:20px;
+	margin-right: -100px;
+	margin-top:-12px;
+}
+}
+
+
+#newUser {
+	display:none;
+}
+#loginJumbrotron {
+	background-color: white;
+	height:auto;
+}
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.errorImg {
+	margin-top:9px;
+	margin-left:-16px;
+	display:none;
+	max-width: 20px;
+	max-height:20px;
+}
+
+</style>
+
+
+<div class="container">
+	<div class="jumbotron" id="loginJumbrotron">
+
+		<ul class="nav nav-tabs">
+			  <li role="presentation" class="active" id="loginTab"><a href="javascript:void">Login</a></li>
+			  <li role="presentation" id="signUpTab"><a href="javascript:void">Signup</a></li>
+		</ul>
+ 		
+		<div class="tab-content">
+
+			  <div class="tab-pane active" id="loginContent">  		
+			  		<div class="row">
+						<div class="col-sm-11">
+							<div class="container">
+								<form class="form-signin" method="POST">
+				        			<h2 class="form-signin-heading">Please sign in</h2>
+				        			<label for="inputEmail" class="sr-only">Email address</label>
+				        			<input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+				        			<label for="inputPassword" class="sr-only">Password</label>
+				       		 		<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				       		 		 
+				       		 		 <div class="form-group"> 
+										<div class="col-sm-offset-4 col-sm-10">
+				        					<button class="btn btn-success" id="signIn" type="submit">Sign in</button>
+				        				</div>
+				        			</div>
+
+				        		</form>
+				        	</br>
+				        		<div id="returnedMessage"></div>
+							</div>
+						</div>
+					</div>
+			  </div>
+
+			  <div class="tab-pane" id="signUpContent">
+			  		<div class="row">
+						<div class="col-sm-12">
+							<div class="container">
+								<form class="form-horizontal" id="createForm" method="POST">
+				        			<h2 class="form-signin-heading">Sign Up</h2>
+				        				
+				        				<div class="form-group">
+										    <label class="control-label col-sm-4" for="newEmail">Email:</label>
+											    <div class="col-sm-7">
+											      <input type="email" class="form-control" id="newEmail" name="email" placeholder="Enter email">
+											    </div>
+											    <div class="col-sm-1">
+											    	<img class="errorImg" src="" id="email1Error" />
+											    </div>
+										 </div>
+
+										 <div class="form-group">
+										    <label class="control-label col-sm-4" for="newEmail2">Re-type Email:</label>
+											    <div class="col-sm-7">
+											      <input type="email" class="form-control" id="newEmail2" name="email2" placeholder="Re-type email">
+											    </div>
+											    <div class="col-sm-1">
+											    	<img class="errorImg" src="" id="email2Error"/>
+											    </div>
+										 </div>
+
+										 <div class="form-group">
+										    <label class="control-label col-sm-4" for="newFirstName">Firstname:</label>
+											    <div class="col-sm-7">
+											      <input type="text" class="form-control" id="newFirstName" name="firstName" placeholder="Firstname">
+											    </div>
+										 </div>
+
+										 <div class="form-group">
+										    <label class="control-label col-sm-4" for="newLastName">Lastname:</label>
+											    <div class="col-sm-7">
+											      <input type="text" class="form-control" id="newLastName" name="lastName" placeholder="Lastname">
+											    </div>
+										 </div>
+
+										 <div class="form-group">
+										    <label class="control-label col-sm-4" for="contact">Contact Number</label>
+											    <div class="col-sm-7">
+											      <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact Number">
+											    </div>
+										 </div>
+
+										 <div class="form-group">
+										    <label class="control-label col-sm-4" for="password">Password</label>
+											    <div class="col-sm-7">
+											      <input type="text" class="form-control" id="newPassword" name="password" placeholder="Password">
+											    </div>
+										 </div>
+
+										 <div class="form-group">
+										    <label class="control-label col-sm-4" for="password2">Re-type Password</label>
+											    <div class="col-sm-7">
+											      <input type="text" class="form-control" id="newPassword2" name="password2" placeholder="Re-type Password">
+											    </div>
+										 </div>
+
+										   <div class="form-group"> 
+											    <div class="col-sm-offset-4 col-sm-10">
+											      <button type="submit" id="btnCreate" class="btn btn-success">Sign Up</button>
+											    </div>
+											    <div class="col-sm-offset-5 col-sm-8">
+											      <div id="catchError"></div>
+											    </div>
+											</div>
+
+				        		</form>
+				        		
+							</div>
+						</div>
+					</div>
+			  </div>
+		
+
+
+		</div>
+
+	</div> 
+</div>
+
+<script>
+$(document).ready(function(){	
+
+	$('#signUpTab').click(function(){
+		$('#loginContent').removeClass('tab-pane active').addClass('tab-pane');
+		$('#signUpContent').addClass('tab-pane active');
+
+		$('#loginTab').removeClass('active');
+		$('#signUpTab').addClass('active');
+
+	});
+	$('#loginTab').click(function(){
+		$('#signUpContent').removeClass('tab-pane active').addClass('tab-pane');
+		$('#loginContent').addClass('tab-pane active');
+
+		$('#signUpTab').removeClass('active');
+		$('#loginTab').addClass('active');
+
+		$('#catchError').css('display','none');
+		$('.errorImg').css('display','none');
+
+	});
+
+
+
+	$('.form-control').focus(function(){
+		$('#returnedMessage').html("");		
+	});
+
+
+
+	$("#signIn").click(function(){
+		$.ajax({
+   			url: "pages/login/authenticate.php",
+   			type: "POST",
+   			data: $('.form-signin').serialize(),
+			success: function(data) {
+					$("#returnedMessage").html(data);
+			}
+	 });
+	});	
+
+
+	$("#btnCreate").click(function(){
+		$.ajax({
+   			url: "pages/account/createAccount.php",
+   			type: "POST",
+   			data: $('#createForm').serialize(),
+			success: function(data) {
+					$("#catchError").html(data);
+			}
+	 });
+	});	
+
+
+
+	$("#newEmail").focusout(function(){
+		$.ajax({
+   			url: "pages/createAccount/uniqueEmailCheck.php",
+   			type: "POST",
+   			data: {email: $('#newEmail').val()},
+			success: function(data) {
+				$("#catchError").html(data);
+			}
+	 });
+	});	
+	$("#newEmail2").focusout(function(){
+		$.ajax({
+   			url: "pages/createAccount/retypeEmailCheck.php",
+   			type: "POST",
+   			data: {email2: $('#newEmail2').val(), email: $('#newEmail').val()},
+			success: function(data) {
+				$("#catchError").html(data);
+			}
+	 });
+	});	
+
+
+
+ });
+
+</script>
